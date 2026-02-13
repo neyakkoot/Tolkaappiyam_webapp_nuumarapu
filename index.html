@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தொல்காப்பிய மெய்-உயிர் விளையாட்டு</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>தொல்காப்பிய மெய்-உயிர் விளையாட்டு</h1>
+        
+        <div id="main-menu">
+            <button onclick="showSection('noolpaa')">1. தொல்காப்பிய நூற்பாக்கள்</button>
+            <button onclick="showSection('practice')">2. மெய்-உயிர் சேரும் முறைகள்</button>
+            <button onclick="showSection('game')">3. விளையாட்டு - அடையாளம் காணுதல்</button>
+        </div>
+
+        <div id="noolpaa" class="section hidden">
+            <h2>தொல்காப்பிய நூற்பாக்கள்</h2>
+            <div class="content-box" id="noolpaa-list"></div>
+            <button onclick="showSection('main-menu')">முதன்மைப் பட்டியலுக்குத் திரும்புக</button>
+        </div>
+
+        <div id="practice" class="section hidden">
+            <h2>மெய்-உயிர் சேரும் முறைகள்</h2>
+            <div class="content-box">
+                <h3>1. அகரமொடு உயிர்த்தல்:</h3>
+                <p id="akaram-sample"></p>
+                <h3>2. ஏனை உயிரொடு உருவு திரிதல்:</h3>
+                <p id="thirithal-sample"></p>
+                <button onclick="generatePractice()">புதிய உதாரணம்</button>
+            </div>
+            <button onclick="showSection('main-menu')">முதன்மைப் பட்டியலுக்குத் திரும்புக</button>
+        </div>
+
+        <div id="game" class="section hidden">
+            <h2>எழுத்து வகை அடையாளம் காணுதல்</h2>
+            <div id="game-area">
+                <p id="question-text"></p>
+                <p id="hint-text" class="hint"></p>
+                <div class="options">
+                    <button onclick="checkAnswer('வல்லெழுத்து')">வல்லெழுத்து</button>
+                    <button onclick="checkAnswer('மெல்லெழுத்து')">மெல்லெழுத்து</button>
+                    <button onclick="checkAnswer('இடையெழுத்து')">இடையெழுத்து</button>
+                </div>
+                <p id="feedback"></p>
+                <p id="score-board">மதிப்பெண்: 0 / 0</p>
+            </div>
+            <button onclick="resetGame(); showSection('main-menu')">வெளியேற</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
